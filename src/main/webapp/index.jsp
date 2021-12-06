@@ -11,6 +11,7 @@
 	background-attachment:fixed;
 }
 </style>
+<title>EBook:HomePage</title>
 
 </head>
 <body style="padding-bottom: 1%;">

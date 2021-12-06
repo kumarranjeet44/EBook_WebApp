@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>EBook: Registration</title>
+<title>EBook:Registration</title>
 <%@ include file="allComponents/allCSS.jsp"%>
 </head>
 <body style="background-color: #f0f1f2;">
@@ -49,7 +49,7 @@
 				<div class="card mt-3">
 					<div class="card-body mt-2">
 						<h4 class="text-center">Registration Page</h4>
-						<form action="register" method="post">
+						<form action="userRegister" method="post">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Enter Full Name</label> <input
 									type="text" class="form-control" id="exampleInputEmail1"

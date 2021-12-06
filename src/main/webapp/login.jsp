@@ -1,10 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>EBook: Registration</title>
+<title>EBook:Login</title>
 <%@ include file="allComponents/allCSS.jsp"%>
 </head>
 <body style="background-color: #f0f1f2;">
@@ -18,9 +19,9 @@
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item active"><a class="nav-link" href="index.jsp"><i
-						class="fas fa-home"></i> Home <span class="sr-only">(current)</span>
-				</a></li>
+				<li class="nav-item active"><a class="nav-link"
+					href="index.jsp"><i class="fas fa-home"></i> Home <span
+						class="sr-only">(current)</span> </a></li>
 				<li class="nav-item active"><a class="nav-link" href="#"><i
 						class="fas fa-book"></i> New Book</a></li>
 				<li class="nav-item active"><a class="nav-link" href="#"><i
@@ -41,32 +42,38 @@
 			</form>
 		</div>
 	</nav>
-	
-	<div class="container" style="margin-bottom:300px">
+
+	<div class="container" style="margin-bottom: 300px">
 		<div class="row">
 			<div class="col-md-4 offset-md-4">
 				<div class="card mt-3">
 					<div class="card-body mt-2">
 						<h4 class="text-center">Login Page</h4>
-						<form>
+						<c:if test="${not empty failedMsg}">
+							<h5 class="text-center text-danger">${failedMsg}</h5>
+							<c:remove var="failedMsg" scope="session" />
+						</c:if>
+                        
+						<form action="login" method="post">
 							<div class="form-group">
 								<label for="exampleInputEmail1">Email address</label> <input
 									type="email" class="form-control" id="exampleInputEmail1"
-									aria-describedby="emailHelp" placeholder="Enter email" required>
+									aria-describedby="emailHelp" placeholder="Enter email"
+									name="email" required>
 							</div>
-							
+
 							<div class="form-group">
 								<label for="exampleInputPassword1">Password</label> <input
 									type="password" class="form-control" id="exampleInputPassword1"
-									placeholder="Enter Password" required>
+									placeholder="Enter Password" name="password" required>
 							</div>
-							
+
 							<div class="text-center">
-							    <button type="submit" class="btn btn-primary">Login</button><br>
-							    <a href="registration.jsp">Create Account</a>
+								<button type="submit" class="btn btn-primary">Login</button>
+								<br> <a href="registration.jsp">Create Account</a>
 							</div>
-							
-							
+
+
 						</form>
 					</div>
 				</div>

@@ -10,8 +10,7 @@ public class User {
 	private String landmark;
 	private String city;
 	private String state;
-	private String pincode;
-	
+	private String pincode;	
 	
 	public User() {}
 	public User(String name, int id, String email, String password, String phno, String address, String landmark,
@@ -27,6 +26,15 @@ public class User {
 		this.city = city;
 		this.state = state;
 		this.pincode = pincode;
+	}
+	public User(String name,String email, String password,String phno) {
+		super();
+		
+		this.name = name;
+		this.email = email;
+		this.password = password;
+		this.phno = phno;
+		
 	}
 	 
 	public String getName() {
